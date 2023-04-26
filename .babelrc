@@ -1,5 +1,23 @@
 {
-	"plugins": [
-		"@babel/plugin-proposal-class-properties"
-	]
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": false,
+        "targets": {
+          "browsers": ["last 2 versions", "ie >= 11"]
+        }
+      },
+      "preset-env-1" // provide a unique name for this preset declaration
+    ]
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      },
+      "class-properties-1" // provide a unique name for this plugin declaration
+    ]
+  ]
 }

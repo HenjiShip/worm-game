@@ -1,18 +1,22 @@
-import Phaser from 'phaser'
+import k from './kaboom'
 
-import HelloWorldScene from './scenes/HelloWorldScene'
+import MainMenu from './scenes/MainMenu'
+import Snake from './scenes/Snake'
+import GameOver from './scenes/GameOver'
+import Instructions from './scenes/Instructions'
+// import swipe from './components/swipe'
 
-const config = {
-	type: Phaser.AUTO,
-	width: 800,
-	height: 600,
-	physics: {
-		default: 'arcade',
-		arcade: {
-			gravity: { y: 200 }
-		}
-	},
-	scene: [HelloWorldScene]
-}
+// swipe()
 
-export default new Phaser.Game(config)
+k.loadSprite('breadWalls', './assets/breadWalls.png')
+k.loadSprite('bodyOrange', './assets/bodyOrange.png')
+k.loadSprite('bodyBeige', './assets/bodyBeige.png')
+k.loadSprite('slimey', './assets/slimey.png')
+k.loadSprite('cookie', './assets/cookie.png')
+
+k.scene('main-menu', MainMenu)
+k.scene('instructions', Instructions)
+k.scene('snake', Snake)
+k.scene('game-over', GameOver)
+
+k.start('snake')
